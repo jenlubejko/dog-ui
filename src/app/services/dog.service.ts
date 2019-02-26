@@ -15,4 +15,13 @@ export class DogService {
   getDogs() {
     return this.http.get('/server/api/v1/dogs');
   }
+
+  getDog(id: number) {
+    return this.http.get('/server/api/v1/dogs/' + id);
+  }
+
+  createDogInformation(dog) {
+    let body = JSON.stringify(dog);
+    return this.http.post('/server/api/v1/dogs', body, httpOptions);
+  }
 }
